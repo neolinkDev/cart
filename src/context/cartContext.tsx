@@ -7,6 +7,7 @@ import {
   DECREASE,
   DISPLAY_ITEMS,
   INCREASE,
+  LOADING,
   REMOVE,
 } from './actions';
 import { getTotals } from '../utils/functions/fns';
@@ -48,17 +49,22 @@ export const CartProvider = ({ children }: CartProviderProps) => {
     getItems();
   }, []);
 
+
   async function getItems() {
+
+    dispatch({type: LOADING, payload: true })
+
     const { data, error } = await supabase.from('items').select('*');
 
     if (error) {
       console.error(error);
+      dispatch({ type: LOADING, payload: false });
       throw new Error('tabla "items" no pudo ser cargada');
     }
 
     dispatch({ type: DISPLAY_ITEMS, payload: data });
   }
-
+  
   const { totalCartSize, subTotal, totalIVA, total } = getTotals(
     cartState.cart
   );

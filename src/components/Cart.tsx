@@ -61,11 +61,6 @@ export const Cart = () => {
                     <dd>${totalIVA.toFixed(2)}</dd>
                   </div>
 
-                  {/* <div className="flex justify-between">
-                    <dt>Discount</dt>
-                    <dd>-£20</dd>
-                  </div> */}
-
                   <div className="flex justify-between !text-base font-medium">
                     <dt>Total</dt>
                     <dd>${total.toFixed(2)}</dd>

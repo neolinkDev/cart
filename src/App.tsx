@@ -1,8 +1,21 @@
 import { Navbar } from './components/Navbar';
 import { ShoppingCart } from './components/Icons';
 import { Cart } from './components/Cart';
+import { useGlobalContext } from './utils/functions/fns';
+import Spinner from './components/spinner/Spinner';
 
 function App() {
+
+  const { cartState: { isLoading } } = useGlobalContext();
+ 
+  if(isLoading){
+    return(
+      <main>
+        <Spinner />
+      </main>
+    )
+  }
+  
   return (
     <>
       <Navbar>

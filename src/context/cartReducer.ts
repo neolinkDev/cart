@@ -19,6 +19,7 @@ type CartAction =
 
 // reducer
 export const cartReducer = (state: CartState, action: CartAction) => {
+  
   switch (action.type) {
     case CLEAR_CART:
       return {
@@ -108,9 +109,16 @@ export const cartReducer = (state: CartState, action: CartAction) => {
 
       return {
         ...state,
+        isLoading: false,
         cart: copyCart,
       };
     }
+
+    case LOADING:
+      return {
+        ...state,
+        isLoading: action.payload,
+      };
 
     default:
       return state;
