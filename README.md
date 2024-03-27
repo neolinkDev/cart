@@ -18,7 +18,7 @@ La aplicación se conecta a un backend creado con Supabase para mostrar los art�
 ## Instalación⚙️
 Clonar repositorio:
 ```js
-git clone 
+git clone git@github.com:neolinkDev/cart.git
 ```
 Instale las dependencias usando la terminal:
 ```js
@@ -32,4 +32,4 @@ npm run dev
 
 Abra la aplicación en su navegador.
 
-📡[DEMO]()
+📡[DEMO](https://cart-jr.netlify.app/)
